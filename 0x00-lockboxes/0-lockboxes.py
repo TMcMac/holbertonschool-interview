@@ -1,19 +1,27 @@
 #!/usr/bin/python3
+"""
+This program takes in a list of lists known as boxes
+each position in the list boxes is a box, and each box
+may contain one of more keys. The goal of the program is
+to check if based on the keys we have are we able to unlock
+all boxes. The box in position 0 of the list boxes will
+always be unlocked. Once we open the 0th box we will need
+to unlock all boxes that the 0th boxes contains keys for
+and contnue on collecting keys and unlocking boxes until
+we have unlocked all boxes or do not have keys to continue.
+If we unlock all we return True, else return False
+"""
 
 def canUnlockAll(boxes):
     """
-    This program takes in a list of lists known as boxes
-    each position in the list boxes is a box, and each box
-    may contain one of more keys. The goal of the program is
-    to check if based on the keys we have are we able to unlock
-    all boxes. The box in position 0 of the list boxes will
-    always be unlocked. Once we open the 0th box we will need
-    to unlock all boxes that the 0th boxes contains keys for
-    and contnue on collecting keys and unlocking boxes until
-    we have unlocked all boxes or do not have keys to continue.
-    If we unlock all we return True, else return False
+    Description:
+        Determines if all boxes can be opened
+        Return True if all boxes can be opened, else return False
+    Args:
+        @boxes: a list of lists, which represents boxes 
+                filled with keys (int values) to other boxes
     """
-
+    
     n = len(boxes) # The number of positions or 'boxes' in list boxes
     unlocked = [0] # The first (0th position) box is always unlocked 
     if n is not 0:
