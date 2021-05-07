@@ -11,7 +11,7 @@
 heap_t *heap_insert(heap_t **root, int value)
 {
 	heap_t *new_node;
-	heap_t *position = *root;
+	/*heap_t *position = *root;*/
 	
 	if (root == NULL)
 		return (NULL);
@@ -23,5 +23,5 @@ heap_t *heap_insert(heap_t **root, int value)
 			return(*root);
 		}
 
-	return(NULL)
+	return(NULL);
 }
