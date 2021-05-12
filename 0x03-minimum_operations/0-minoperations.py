@@ -13,21 +13,24 @@ def minOperations(n):
     Return - least number of copy all and paste functions to get n h's
     """
 
-    listH = 'H'
-    currCopy = listH
-    pst = 0
-    cpy = 1
+    hs = ['H'] # Our starting text file contains 1 * 'H'
+    currCopy = ['H'] # Anything greater than n=1 will require a copy operation
+    operations = 0 # Count of number of operations
 
-    if len(listH) >= n or type(n) is not int:
+    if n <= 1 or isinstance(n, int) is False:
         return 0
     else:
-        while len(listH) < n:
-            if (2 * len(listH)) <= (n / 2):
-                listH += listH
-                cpy += 1
-                pst += 1
-                currCopy = listH
+        while len(hs) < n:
+            double = (2 * len(hs))
+            if (n % double  == 0):
+                currCopy = list(hs) # This is a copy all
+                hs.extend(hs) # This is a paste all
+                operations += 2 # That means two operations
+            elif (n % len(hs) == 0):
+                currCopy = list(hs) # This is a copy all
+                hs.extend(hs) # This is a paste all
+                operations += 2 # That means two operations
             else:
-                listH += currCopy
-                pst += 1
-        return cpy + pst
+                hs.extend(currCopy)
+                operations += 1 # This is one paste function
+        return operations
