@@ -23,7 +23,7 @@ def minOperations(n):
         hs = 1
         currCopy = 1
         while hs < n:
-            if n % (hs * 2) == 0 or n % hs == 0:
+            if (n % (hs * 2) == 0) or (n % hs == 0):
                 currCopy = hs
                 hs * 2
                 operations += 2
@@ -34,11 +34,11 @@ def minOperations(n):
         while len(hs) < n:
             double = (2 * len(hs))
             if (n % double == 0):
-                currCopy = list(hs)  # This is a copy all as doubling the list goes into n
+                currCopy = list(hs)  # Copy all doubling th goes into n
                 hs.extend(hs)  # This is a paste all
                 operations += 2  # That means two operations
             elif (n % len(hs) == 0):
-                currCopy = list(hs)  # This is a copy all as current list goes into n
+                currCopy = list(hs)  # Copy all as current list goes into n
                 hs.extend(hs)  # This is a paste all
                 operations += 2  # That means two operations
             else:
