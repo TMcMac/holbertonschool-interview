@@ -19,18 +19,29 @@ def minOperations(n):
 
     if n <= 1 or isinstance(n, int) is False:
         return 0
+    elif n > 536870912:
+        hs = 1
+        currCopy = 1
+        while hs < n:
+            if n % (hs * 2) == 0 or n % hs == 0:
+                currCopy = hs
+                hs * 2
+                operations += 2
+            else:
+                hs += currCopy
+                operations =+ 1
     else:
         while len(hs) < n:
             double = (2 * len(hs))
-            if (n % double  == 0):
-                currCopy = list(hs)  # This is a copy all
+            if (n % double == 0):
+                currCopy = list(hs)  # This is a copy all as doubling the list goes into n
                 hs.extend(hs)  # This is a paste all
                 operations += 2  # That means two operations
             elif (n % len(hs) == 0):
-                currCopy = list(hs)  # This is a copy all
+                currCopy = list(hs)  # This is a copy all as current list goes into n
                 hs.extend(hs)  # This is a paste all
                 operations += 2  # That means two operations
             else:
                 hs.extend(currCopy)
                 operations += 1  # This is one paste function
-        return operations
+    return operations
