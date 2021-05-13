@@ -29,7 +29,7 @@ def minOperations(n):
                 operations += 2
             else:
                 hs += currCopy
-                operations =+ 1
+                operations += 1
     else:
         while len(hs) < n:
             double = (2 * len(hs))
