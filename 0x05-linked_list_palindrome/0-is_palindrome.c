@@ -9,47 +9,47 @@
 
 int is_palindrome(listint_t **head)
 {
-  int count = 0;
-  int i = 0;
-  listint_t *mover;
-  int *listn;
-  
-  if (!head || !*head)
-      return (0);
+	int count = 0;
+	int i = 0;
+	listint_t *mover;
+	int *listn;
+	
+	if (!head || !*head)
+		return (0);
 
-  mover = *head;
-  if (mover->next == NULL)
-      return (1);
+	mover = *head;
+	if (mover->next == NULL)
+		return (1);
 
-  while (mover != NULL)
-    {
-      count++;
-      mover = mover->next;
-    }
-  printf("Transversed List\n Count = %d\n", count);
-  listn = malloc(sizeof(int) * count);
-  if (listn == NULL)
-      return (0);
-  printf("Listn malloced\n");
-  mover = *head;
-  while (mover != NULL)
-    {
-      listn[i] = mover->n;
-      i++;
-      mover = mover->next;
-    }
-  printf("Listn populated\n");
-  mover = *head;
-  while (mover!= NULL)
-    {
-      printf("Comparing list[n] = %d AND mover[n] = %d\n", listn[i - 1], mover->n);
-      if (listn[i - 1] == mover->n)
+	while (mover != NULL)
 	{
-	  i--;
-	  mover = mover->next;
+		count++;
+		mover = mover->next;
 	}
-      else
-	  return (0);
-    }
-  return (1);
+	printf("Transversed List\n Count = %d\n", count);
+	listn = malloc(sizeof(int) * count);
+	if (listn == NULL)
+		return (0);
+	printf("Listn malloced\n");
+	mover = *head;
+	while (mover != NULL)
+	{
+		listn[i] = mover->n;
+		i++;
+		mover = mover->next;
+	}
+	printf("Listn populated\n");
+	mover = *head;
+	while (mover!= NULL)
+	{
+		printf("Comparing list[n] = %d AND mover[n] = %d\n", listn[i - 1], mover->n);
+		if (listn[i - 1] == mover->n)
+		{
+			i--;
+			mover = mover->next;
+		}
+		else
+			return (0);
+	}
+	return (1);
 }
