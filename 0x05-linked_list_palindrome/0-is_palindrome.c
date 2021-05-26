@@ -14,8 +14,10 @@ int is_palindrome(listint_t **head)
 	listint_t *mover;
 	int *listn;
 
-	if (!head || !*head)
+	if (!head)
 		return (0);
+	if (!*head)
+	  return (1);
 
 	mover = *head;
 	if (mover->next == NULL)
