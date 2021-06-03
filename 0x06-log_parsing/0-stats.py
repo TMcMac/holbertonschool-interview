@@ -34,21 +34,21 @@ def parse_data():
                 print("File size: {}".format(sum(filesizes)))
                 # dict of codes and count
                 codes_dict = {i: codes.count(i) for i in codes}
-                for k, v in codes_dict.items():
-                    print("{}: {}".format(k, v))
+                for k in sorted(codes_dict.keys()):
+                    print("{}: {}".format(k, codes_dict[k]))
         # we leave the loop if we run out of lines
         # If we didn't just print we need to
         if count % 10 != 0:
             print("File size: {}".format(sum(filesizes)))
             codes_dict = {i: codes.count(i) for i in codes}
-            for k, v in codes_dict.items():
-                print("{}: {}".format(k, v))
+            for k in sorted(codes_dict.keys()):
+                print("{}: {}".format(k, codes_dict[k]))
     # If a ctrl C is sent, final print and quit
     except KeyboardInterrupt:
         print("File size: {}".format(sum(filesizes)))
         codes_dict = {i: codes.count(i) for i in codes}
-        for k, v in codes_dict.items():
-            print("{}: {}".format(k, v))
+        for k in sorted(codes_dict.keys()):
+            print("{}: {}".format(k, codes_dict[k]))
         return
 
 if __name__ == '__main__':
