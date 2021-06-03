@@ -43,6 +43,8 @@ def parse_data():
             codes_dict = {i: codes.count(i) for i in codes}
             for k in sorted(codes_dict.keys()):
                 print("{}: {}".format(k, codes_dict[k]))
+        elif count == 0:
+            print("File size: {}".format(sum(filesizes)))
     # If a ctrl C is sent, final print and quit
     except KeyboardInterrupt:
         print("File size: {}".format(sum(filesizes)))
