@@ -27,6 +27,8 @@ def parse_data():
             parsing = line.split()  # Break up line by spaces
             if len(parsing) != 9:
                 continue
+            if not (parsing[-2].isnumeric()):
+                continue
             filesizes.append(int(parsing[-1]))  # last element is filesize
             if int(parsing[-2]) in statuscodes:
                 # second to last is status code
