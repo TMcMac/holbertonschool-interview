@@ -26,7 +26,7 @@ def parse_data():
             count += 1
             parsing = line.split()  # Break up line by spaces
             # This is a hacky way to check format of stdin
-            if len(parsing) > 2:
+            if len(parsing) < 2:
                 continue
             if not (parsing[-1].isnumeric()):
                 continue
