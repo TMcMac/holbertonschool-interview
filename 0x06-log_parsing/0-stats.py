@@ -29,7 +29,7 @@ def parse_data():
             if len(parsing) > 2:
                 continue
             if not (parsing[-1].isnumeric()):
-                continue)
+                continue
             if not (parsing[-2].isnumeric()):
                 continue
             filesizes.append(int(parsing[-1]))  # last element is filesize
