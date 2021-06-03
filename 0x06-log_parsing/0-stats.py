@@ -26,11 +26,14 @@ def parse_data():
             count += 1
             parsing = line.split()  # Break up line by spaces
             filesizes.append(int(parsing[-1]))  # last element is filesize
-            if int(parsing[-2]) in statuscodes:  # second to last is status code
+            if int(parsing[-2]) in statuscodes:
+                # second to last is status code
                 codes.append(int(parsing[-2]))
             if count % 10 == 0:  # Every ten rounds print data
-                print("File size: {}".format(sum(filesizes)))  # sumall file sizes
-                codes_dict = {i: codes.count(i) for i in codes}  # dict of codes and count
+                # sumall file sizes
+                print("File size: {}".format(sum(filesizes)))
+                # dict of codes and count
+                codes_dict = {i: codes.count(i) for i in codes}
                 for k, v in codes_dict.items():
                     print("{}: {}".format(k, v))
         # we leave the loop if we run out of lines
@@ -50,4 +53,3 @@ def parse_data():
 
 if __name__ == '__main__':
     parse_data()
-
