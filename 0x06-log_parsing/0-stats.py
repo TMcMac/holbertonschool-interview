@@ -20,6 +20,9 @@ def parse_data():
     
     try:
         for line in sys.stdin:
+            if line == "":
+                continue
+            print(line)
             count += 1
             parsing = line.split()
             filesizes.append(int(parsing[-1]))
