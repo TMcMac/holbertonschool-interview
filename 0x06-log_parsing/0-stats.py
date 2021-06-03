@@ -25,8 +25,11 @@ def parse_data():
                 continue
             count += 1
             parsing = line.split()  # Break up line by spaces
-            if len(parsing) != 9:
+            # This is a hacky way to check format of stdin
+            if len(parsing) > 2:
                 continue
+            if not (parsing[-1].isnumeric()):
+                continue)
             if not (parsing[-2].isnumeric()):
                 continue
             filesizes.append(int(parsing[-1]))  # last element is filesize
