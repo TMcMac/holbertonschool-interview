@@ -1,4 +1,5 @@
 #!/usr/bin/python3
+"""A short function for use with 0-generator.py """
 import sys
 
 
