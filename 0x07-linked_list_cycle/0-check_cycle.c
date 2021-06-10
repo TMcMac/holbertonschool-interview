@@ -11,7 +11,7 @@ int check_cycle(listint_t *list)
 {
   listint_t *hare = list, *tort = list;
 
-  if (list->next == NULL || list == NULL)
+  if (list == NULL || list->next == NULL)
     return(0);
 
   while (hare != NULL && tort != NULL)
