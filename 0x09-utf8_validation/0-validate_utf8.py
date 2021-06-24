@@ -1,4 +1,5 @@
 #!/usr/bin/python3
+"""A Simple function to check UTF8 chars"""
 
 def validUTF8(data):
     """
