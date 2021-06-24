@@ -8,22 +8,22 @@
 
 int is_palindrome(unsigned long n)
 {
-  unsigned long num = n;
-  unsigned long mun = 0;
-  int remainder;
+	unsigned long num = n;
+	unsigned long mun = 0;
+	int remainder;
 
-  if (n < 10)
-    return (1);
+	if (n < 10)
+		return (1);
 
-  while (num != 0)
-    {
-      remainder = (num % 10);
-      mun = (mun * 10) + remainder;
-      num /= 10;
-    }
+	while (num != 0)
+		{
+			remainder = (num % 10);
+			mun = (mun * 10) + remainder;
+			num /= 10;
+		}
 
-  if (mun == n)
-    return (1);
-  else
-    return (0);
+	if (mun == n)
+		return (1);
+	else
+		return (0);
 }
