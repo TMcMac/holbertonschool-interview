@@ -1,6 +1,7 @@
 #!/usr/bin/python3
 """A Simple function to check UTF8 chars"""
 
+
 def validUTF8(data):
     """
 	Function: validUTF8
@@ -22,6 +23,8 @@ def validUTF8(data):
             return False
     for num in data:
         if num > 31 and num < 127:
+            continue
+        elif num == 0:
             continue
         else:
             return False
