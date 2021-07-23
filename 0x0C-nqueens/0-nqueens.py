@@ -1,4 +1,4 @@
-#!/usr/bin/env python3
+#!/usr/bin/python3
 """Solving N Queens with Backtracing"""
 import sys
 
@@ -32,5 +32,3 @@ def main():
 
 if __name__ == '__main__':
     main()
-
-    
