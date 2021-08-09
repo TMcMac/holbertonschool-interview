@@ -24,15 +24,15 @@ request(url + film, function (error, response, body) {
 //    console.log (typeof payload);
     const characters = payload["characters"];
     let x = 0;
-    for (x < Object.length(characters)) {
-	request(characters[x], function (error, response, body) {
-	    console.error('errorCharData:', error); // Print the error if one occurred
-	    console.log('statusCodeCharData:', response && response.statusCode); // Print the response status code if a response was received
-	    let charData = JSON.parse(body);
-	    let charName = charData['name'];
-	    console.log(charName);
-	    x = x + 1;
-	});
+    for (x < characters.length) {
+    	request(characters[x], function (error, response, body) {
+	        console.error('errorCharData:', error); // Print the error if one occurred
+	        console.log('statusCodeCharData:', response && response.statusCode); // Print the response status code if a response was received
+	        let charData = JSON.parse(body);
+	        let charName = charData['name'];
+	        console.log(charName);
+	        x = x + 1;
+	    });
     };
 });
 
