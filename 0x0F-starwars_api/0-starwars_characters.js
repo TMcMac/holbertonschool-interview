@@ -20,6 +20,7 @@ const film = Number(args[2]); // Film number in relase date order
 const url = "https://swapi-api.hbtn.io/api/films/" // Swapi films base url
 const request = require('request');
 
+async function swapi(film, url, request) {
 	request(url + film, function (error, response, body) {
 		if (error !== null) {
 		console.error('error:', error); // Print the error if one occurred
@@ -32,6 +33,7 @@ const request = require('request');
 		console.log(characters); // Print the whole list, for testing
 		for (let x = 0; x < characters.length; x++) {
 			request(characters[x], function (error, response, body) {
+				await sleep(2000);
 				if (error !== null) {
 					console.error('errorCharData:', error); // Print the error if one occurred
 				};
@@ -45,4 +47,5 @@ const request = require('request');
 			});
 		};
 	});
-
+};
+swapi(film, url, request);
