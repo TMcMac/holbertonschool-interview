@@ -27,16 +27,15 @@ request(url, function (error, response, body) {
 
 	const payload = JSON.parse(body);
 	const characters = payload["characters"]; // An array of character urls for the SWAPI
-        let charDict = {}
-        function resolveAfter2Seconds() {
+	let charDict = {}
+    function resolveAfter2Seconds() {
 	    return new Promise(resolve => {
 	        setTimeout(() => {
-		    resolve('resolved');
+			    resolve('resolved');
 	        }, 2000);
 	    });
-        };
+    };
     for (let x = 0; x < characters.length; x++) {
-	charDict.push(
 	    request(characters[x], async function (error, response, body) {
 		    const result = await resolveAfter2Seconds();
 		    if (error !== null) {
@@ -47,10 +46,7 @@ request(url, function (error, response, body) {
 			};
 			let charData = JSON.parse(body); // Parse string to dict
 			let charName = charData['name']; // Get just the character name
-		    return ({x: charName});
+		    console.log(charName);
 		});
 	};
-	for (let i = 0; i < Object.keys(charDict).length; i++) {
-		console.log(charDict[i]);
-	}
 });
