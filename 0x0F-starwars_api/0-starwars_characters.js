@@ -13,38 +13,43 @@ if (Number.isInteger(Number(args[2])) == false) {
 }
 
 const film = Number(args[2]); // Film number in relase date order
-const url = "https://swapi-api.hbtn.io/api/films/" // Swapi films base url
+const url = "https://swapi-api.hbtn.io/api/films/" + film + "/" // Swapi films base url
 const request = require('request');
 
 
-request(url + film, function (error, response, body) {
+request(url, function (error, response, body) {
 	if (error !== null) {
 		console.error('error:', error); // Print the error if one occurred
 	};
 	if (Number(response.statusCode) !== 200) {
-		console.log('statusCode:', response && response.statusCode); // Print the response status code if not an OK
+	    console.log('statusCode:', response && response.statusCode); // Print the response status code if not an OK
 	};
 
 	const payload = JSON.parse(body);
 	const characters = payload["characters"]; // An array of character urls for the SWAPI
-	// console.log(characters); // Print the whole list, for testing
-	let charDict = {};
-	for (let x = 0; x < characters.length; x++) {
-		request(characters[x], function (error, response, body) {
-			if (error !== null) {
+        let charDict = {}
+        function resolveAfter2Seconds() {
+	    return new Promise(resolve => {
+	        setTimeout(() => {
+		    resolve('resolved');
+	        }, 2000);
+	    });
+        };
+    for (let x = 0; x < characters.length; x++) {
+	charDict.push(
+	    request(characters[x], async function (error, response, body) {
+		    const result = await resolveAfter2Seconds();
+		    if (error !== null) {
 				console.error('errorCharData:', error); // Print the error if one occurred
 			};
 			if (Number(response.statusCode) !== 200) {
 				console.log('statusCodeCharData:', response && response.statusCode); // Print the response status code if not an OK
 			};
-			// console.log(characters[x]); // The character specific URL
 			let charData = JSON.parse(body); // Parse string to dict
 			let charName = charData['name']; // Get just the character name
-			console.log('${x}: ${charName}');	
-			charDict[x] = charName;
+		    return ({x: charName});
 		});
 	};
-	console.log(charDict);
 	for (let i = 0; i < Object.keys(charDict).length; i++) {
 		console.log(charDict[i]);
 	}
