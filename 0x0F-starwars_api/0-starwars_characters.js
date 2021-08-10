@@ -2,7 +2,7 @@
 
 const args = process.argv;
 
-if (args.length != 3) {
+if (args.length !== 3) {
     console.log("Usage: ./0-starwars_characters.js <Film Number>");
     process.exit(1);
 };
