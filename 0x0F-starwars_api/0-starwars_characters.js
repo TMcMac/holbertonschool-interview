@@ -45,8 +45,8 @@ request(url, function (error, response, body) {
 			};
 			let charData = JSON.parse(body); // Parse string to dict
 			let charName = charData['name']; // Get just the character name
-		    console.log(charName);
-		});
-		const result = await resolveAfter2Seconds();
+			const result = await resolveAfter2Seconds();
+			console.log(charName);
+	    });
 	};
 });
