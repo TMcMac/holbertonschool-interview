@@ -37,7 +37,6 @@ request(url, function (error, response, body) {
     };
     for (let x = 0; x < characters.length; x++) {
 	    request(characters[x], async function (error, response, body) {
-		    const result = await resolveAfter2Seconds();
 		    if (error !== null) {
 				console.error('errorCharData:', error); // Print the error if one occurred
 			};
@@ -48,5 +47,6 @@ request(url, function (error, response, body) {
 			let charName = charData['name']; // Get just the character name
 		    console.log(charName);
 		});
+		const result = await resolveAfter2Seconds();
 	};
 });
