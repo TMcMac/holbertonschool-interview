@@ -7,7 +7,7 @@ if (args.length !== 3) {
   process.exit(1);
 }
 
-if (Number.isInteger(Number(args[2])) == false) {
+if (Number.isInteger(Number(args[2])) === false) {
   console.log('Usage: ./0-starwars_characters.js <Film Number>');
   process.exit(1);
 }
@@ -26,7 +26,7 @@ request(url, function (error, response, body) {
 
   const payload = JSON.parse(body);
   const characters = payload.characters; // An array of character urls for the SWAPI
-  const charDict = {};
+  // const charDict = {};
   function resolveAfter2Seconds () {
       return new Promise(resolve => {
           setTimeout(() => {
