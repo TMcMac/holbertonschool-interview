@@ -1,9 +1,9 @@
 #!/usr/bin/python3
 """A simple program to calculate water capture"""
-from typing import List
+#from typing import List
 
 
-def rain(walls: List[int]) -> int:
+def rain(walls):
     """
     rain: is a function that will calculate how
         many units of rain we can capture based on the
