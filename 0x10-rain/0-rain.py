@@ -1,6 +1,5 @@
 #!/usr/bin/python3
 """A simple program to calculate water capture"""
-#from typing import List
 
 
 def rain(walls):
@@ -24,16 +23,16 @@ def rain(walls):
     rightWall = 0
     leftWall = 0
     totalVolume = 0
-    rwPosition = 0
-    lwPosition = 0
+    rwPos = 0
+    lwPos = 0
 
     while i < len(walls):
-        if walls[i] != 0:
-            totalVolume += ((rwPosition - lwPosition) * min(leftWall, rightWall))
+        if walls[i] != 0 or i + 1 == len(walls):
+            totalVolume += ((rwPos - lwPos) * min(leftWall, rightWall))
             leftWall = rightWall
-            lwPosition = rwPosition
+            lwPos = rwPos
             rightWall = walls[i]
-            rwPosition = i
+            rwPos = i
         i += 1
     return totalVolume
 
