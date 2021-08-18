@@ -5,13 +5,13 @@ on wall heights
 """
 from typing import List
 
-def rainBarrel(walls: List[int]) -> int:
+def rain(walls: List[int]) -> int:
     """
-    rainBarrel is a function that will calculate how
+    rain: is a function that will calculate how
         many units of rain we can capture based on the
         height of walls in the list walls, and the space
         between each pair of walls.
-    Parameters: 
+    Parameters:
         walls - a list of non-neg ints that indicate
         either a wall (positive int) or a space (zero)
         any space between two walls is considered a
@@ -26,18 +26,18 @@ def rainBarrel(walls: List[int]) -> int:
     rightWall = 0
     leftWall = 0
     totalVolume = 0
-    spaces = 0
+    rwPosition = 0
+    lwPosition = 0
 
-    while(walls[i]):
+    while i < len(walls):
         if walls[i] != 0:
-            totalVolume += (spaces * min(leftWall, rightWall))
+            totalVolume += ((rwPosition - lwPosition) * min(leftWall, rightWall))
             leftWall = rightWall
+            lwPosition = rwPosition
             rightWall = walls[i]
-            spaces = 0
-        else: 
-            spaces += 1
+            rwPosition = i
         i += 1
     return totalVolume
 
 if __name__ == '__main__':
-    rainBarrel()
+    rain()
