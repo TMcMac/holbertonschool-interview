@@ -19,21 +19,12 @@ def rain(walls):
         of water that can be captured for this wall
         configuration.
     """
-    i = 0
-    rightWall = 0
-    leftWall = 0
     totalVolume = 0
-    rwPos = 0
-    lwPos = 0
 
-    while i < len(walls):
-        if walls[i] != 0 or i + 1 == len(walls):
-            totalVolume += ((rwPos - lwPos) * min(leftWall, rightWall))
-            leftWall = rightWall
-            lwPos = rwPos
-            rightWall = walls[i]
-            rwPos = i
-        i += 1
+    for i in range(len(walls)):
+        left_max = max(walls[:i + 1])
+        right_max = max(walls[i:])
+        totalVolume += max(min(left_max, right_max) - walls[i], 0)
     return totalVolume
 
 if __name__ == '__main__':
