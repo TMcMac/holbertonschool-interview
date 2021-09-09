@@ -27,8 +27,8 @@ def count_words(subreddit, word_list, after=None, count={}):
         hot = 'https://www.reddit.com/r/{}/hot.json?after={}'.format(
             subreddit, after)
     hot_request = requests.get(hot,
-                                 headers={"user-agent": "user"},
-                                 allow_redirects=False)
+                            headers={"user-agent": "user"},
+                            allow_redirects=False)
     try:
         data = hot_request.json().get("data")
     except:
