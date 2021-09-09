@@ -1,4 +1,4 @@
-#!/usr/bin/env python3
+#!/usr/bin/python3
 """ A script for counting hot terms on subreddits """
 import json
 import requests
