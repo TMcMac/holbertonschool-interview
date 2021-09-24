@@ -19,7 +19,7 @@ int main(int argc, char **argv)
 		exit(98);
 	}
 
-	if ((argv[1] - '0') == 0) || (argv[2] - '0') == 0)
+	if ((argv[1] - '0') == 0 || (argv[2] - '0') == 0)
 	{
 		printf("0\n");
 		return (0);
