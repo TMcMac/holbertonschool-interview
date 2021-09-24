@@ -7,6 +7,6 @@
 int multi_long(char *num1, char *num2);
 int _strlen(char *string);
 int _isdigit(char *string);
-long long int _atoi(char *string, int len);
+long int _atoi(char *string, int len);
 
 #endif

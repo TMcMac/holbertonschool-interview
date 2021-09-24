@@ -10,7 +10,7 @@
 int main(int argc, char **argv) {
 
   int num1_len, num2_len;
-  long long int num1, num2;
+  long int num1, num2;
 
   if(argc != 3) {
     printf("Error\n");
@@ -22,10 +22,10 @@ int main(int argc, char **argv) {
 	num2_len = _strlen(argv[2]);
   }
   
-  if ((num1_len + num2_len) < 17) {
+  if ((num1_len + num2_len) < 10) {
     num1 = _atoi(argv[1], num1_len);
     num2 = _atoi(argv[2], num2_len);
-    printf("%lld\n", num1 * num2);
+    printf("%ld\n", num1 * num2);
   }
   
   return (0);
@@ -68,10 +68,10 @@ int _isdigit(char *string) {
  * _atoi - convert a string to a number
  * @string: a string of chars
  * @len: the length of the string befor \0
- * Return: the number as a long long
+ * Return: the number as a long
  */
-long long int _atoi(char *string, int len) {
-  long long int num = 0;
+long int _atoi(char *string, int len) {
+  long int num = 0;
   int i;
 
   for(i = 0; i <= len; i++) {
