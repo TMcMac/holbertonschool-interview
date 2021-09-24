@@ -13,7 +13,7 @@ int main(int argc, char **argv)
 	int num1_len, num2_len;
 	long int num1, num2;
 
-	if(argc != 3)
+	if (argc != 3)
 	{
 		printf("Error\n");
 		exit(98);
@@ -24,14 +24,14 @@ int main(int argc, char **argv)
 	num1_len = _strlen(argv[1]);
 	num2_len = _strlen(argv[2]);
 	}
-	
+
 	if ((num1_len + num2_len) < 10)
 	{
 		num1 = _atoi(argv[1], num1_len);
 		num2 = _atoi(argv[2], num2_len);
 		printf("%ld\n", num1 * num2);
 	}
-	
+
 	return (0);
 }
 
@@ -45,7 +45,7 @@ int _strlen(char *string)
 {
 	int i = 0;
 
-	while(string[i] != '\0')
+	while (string[i] != '\0')
 	{
 		i++;
 	}
@@ -61,14 +61,15 @@ int _isdigit(char *string)
 {
 	int i;
 
-	for(i = 0; string[i] != '\0'; i++)
+	for (i = 0; string[i] != '\0'; i++)
 	{
-		if((string[i] < 48) || (string[i] > 57))
+		if ((string[i] < 48) || (string[i] > 57))
 		{
-	printf("Error\n");
-	exit(98);
-		} else {
-	continue;
+			printf("Error\n");
+			exit(98);
+		} else 
+		{
+			continue;
 		}
 	}
 	return (0);
@@ -85,7 +86,7 @@ long int _atoi(char *string, int len)
 	long int num = 0;
 	int i;
 
-	for(i = 0; i <= len; i++)
+	for (i = 0; i <= len; i++)
 	{
 		num = (num * 10) + (string[i] - '0');
 	}
