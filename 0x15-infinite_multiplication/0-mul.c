@@ -67,7 +67,7 @@ int _isdigit(char *string)
 		{
 			printf("Error\n");
 			exit(98);
-		} else 
+		} else
 		{
 			continue;
 		}
