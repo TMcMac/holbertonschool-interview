@@ -25,9 +25,12 @@ listint_t *find_listint_loop(listint_t *head)
 		if (tort == hare)
 		{
 			tort = head;
-			while (tort->next != head)
+			while (tort != hare)
+			{
 				tort = tort->next;
-			return (tort);
+				hare = hare->next;
+			}
+			return (hare);
 		}
 	}
 	return (NULL);
