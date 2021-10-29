@@ -50,4 +50,7 @@ This series of challenges is meant to help work through problems of algorithmic 
 ---
 
 ## Author
-* **Tim McMacken** - [TMcMac](https://github.com/TMcMac) [LinkedIn](https://www.linkedin.com/in/timmcmacken/)
+* **Tim McMacken** - I am an aspiring software engineer working my way through the Holberton curriculum with an eye toward data science.  
+* [TMcMac](https://github.com/TMcMac)
+* [LinkedIn](https://www.linkedin.com/in/timmcmacken/)
+* [Twitter](https://www.twitter.com/cmdmine)
