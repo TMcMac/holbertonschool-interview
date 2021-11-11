@@ -1,6 +1,14 @@
 #!/usr/bin/python3
-
+"""
+A interview question for finding the perimeter of
+islands in a matrix
+"""
 def island_perimeter(grid):
+    """
+        We are given a matrix of 1s and 0s where 1s are land
+        and zeros are water, we need to find the length of the
+        perimeter of all the islands on our grid.
+    """
     row = 0
     perimeter = 0
     for row in range(len(grid)):
