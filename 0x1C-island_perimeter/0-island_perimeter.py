@@ -29,7 +29,7 @@ def island_perimeter(grid):
                     # if not the top row, but previous [row, this col] is water
                     perimeter += 1
                 if row == (len(grid) - 1):
-                    # if we are in the last row, on land, the bottom is a border
+                    # if we are in the last row, on land, the bottom is border
                     perimeter += 1
                 elif grid[(row + 1)][col] == 0:
                     # if not the bottom, but next [row,this col] is water
