@@ -1,6 +1,6 @@
 #include "holberton.h"
 /**
- * wildcmp: a function to compare two strings to
+ * wildcmp - a function to compare two strings to
  * determin if they are exactly the same. A string
  * can contain a wild card that is equal to any char
  * in any quantity, so 'hello' and 'h*o' are considered
@@ -9,8 +9,6 @@
  * @s2: a string that can contain the wildcard *
  * Return: 1 if exactly the same, 0 if not
  */
-
-
 int wildcmp(char *s1, char *s2)
 {
 	int s1len, s2len;
@@ -30,7 +28,7 @@ int wildcmp(char *s1, char *s2)
 	else if (s2len == 1 && s2[0] == '*')
 		return (1);
 	else if (allstar(s2, s2len))
-	  return (1);
+	return (1);
 	else if (s1[s1len] != s2[s2len] && s2[s2len] != '*')
 		return (0);
 
@@ -44,8 +42,6 @@ int wildcmp(char *s1, char *s2)
  * @string: a pointer to the start of a string
  * Return: an int for length
  */
-
-
 int _strlen(char *string)
 {
 	int count = 0;
@@ -59,10 +55,9 @@ int _strlen(char *string)
 /**
  * allstar - a check of if a string is all ***
  * @string: a string, a pointer to a string
+ * @strlen: length of the string
  * Return: 1 if all starts, 0 if not
  */
-
-
 int allstar(char *string, int strlen)
 {
 	int i;
