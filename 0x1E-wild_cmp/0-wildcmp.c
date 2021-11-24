@@ -13,26 +13,26 @@
 
 int wildcmp(char *s1, char *s2)
 {
-  int s1len, s2len, check;
+	int s1len, s2len;
 
-  // if either string is null or empty it's game over
-  if(s1 == NULL || s2 == NULL)
-      return 0;
-  s1len = _strlen(s1);
-  s2len = _strlen(s2);
-  if(s1len == 0 || s2len == 0)
-      return 0;
+	// if either string is null or empty it's game over
+	if(s1 == NULL || s2 == NULL)
+			return 0;
+	s1len = _strlen(s1);
+	s2len = _strlen(s2);
+	if(s1len == 0 || s2len == 0)
+			return 0;
 
-  // Quick check of first and last positions
-  // if s2 is just an * it will match any s1
-  if(s1[0] != s2[0] && s2[0] != '*')
-    return 0;
-  else if(s2len == 1 && s2[0] == '*')
-      return 1;
-  else if(allstar(s2, s2len))
-      return 1;
-  else if(s1[s1len] != s2[s2len] && s2[s2len] != '*')
-    return 0;
+	// Quick check of first and last positions
+	// if s2 is just an * it will match any s1
+	if(s1[0] != s2[0] && s2[0] != '*')
+		return 0;
+	else if(s2len == 1 && s2[0] == '*')
+			return 1;
+	else if(allstar(s2, s2len))
+			return 1;
+	else if(s1[s1len] != s2[s2len] && s2[s2len] != '*')
+		return 0;
 
   check = full_check(s1, s2);
   
@@ -49,13 +49,11 @@ int wildcmp(char *s1, char *s2)
 
 int _strlen(char *string)
 {
-  int count = 0;
+	int count = 0;
 
-  while(string[count] != '\0')
-    {
-      count++;
-    }
-  return (count);
+	while(string[count] != '\0')
+			count++;
+	return (count);
 }
 
 
@@ -66,15 +64,12 @@ int _strlen(char *string)
  */
 int allstar(char* string, int strlen)
 {
-  int i;
-  
-  for(i = 0; i < strlen; i++)
-    {
-      if(string[i] != '*')
-	return 0;
-		 
-    }
-  return 1;
+	int i;
+	
+	for(i = 0; i < strlen; i++)
+	      if(string[i] != '*')
+		  return 0;
+	return 1;
 }
 
 /**
