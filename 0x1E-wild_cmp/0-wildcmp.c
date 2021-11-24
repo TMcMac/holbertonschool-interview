@@ -13,8 +13,7 @@
 
 int wildcmp(char *s1, char *s2)
 {
-  // int s1pos, s2pos, s2posnext;  
-  int s1len, s2len;
+  int s1len, s2len, check;
 
   // if either string is null or empty it's game over
   if(s1 == NULL || s2 == NULL)
@@ -35,11 +34,9 @@ int wildcmp(char *s1, char *s2)
   else if(s1[s1len] != s2[s2len] && s2[s2len] != '*')
     return 0;
 
-  // s1pos = 0;
-  // s2pos = 0;
-  // s2posnext = 1;
+  check = full_check(s1, s2);
   
-  return 0;
+  return check;
 }
 
 
@@ -78,4 +75,29 @@ int allstar(char* string, int strlen)
 		 
     }
   return 1;
+}
+
+/**
+ * full_check - do a full check of the strings
+ * @s1: a string
+ * @s2: a string that may contain wildcards '*'
+ * Return: 1 for full match, 0 for not
+ */
+
+
+int full_check(char* s1, char* s2)
+{
+  // If we hit the end of both strings, they match
+  if(*s1 == '\0' && *s2 == '\0')
+    return 1;
+  // If we hit the end of s1 but !s2 we need to check for chars
+  if (*s1 == '\0' && *s2 == '*')
+    return (full_check(s1, s2 + 1));
+  // If we have same char in s1/s2 they match adv both
+  if (*s1 == *s2)
+    return (full_check(s1 + 1, s2 + 1));
+  // If s2 is on a wildcard we check for both the next in s1 and s2
+  if (*s2 == '*')
+    return (full_check(s1, s2 + 1) || full_check(s1 + 1, s2));
+  return (0);
 }
