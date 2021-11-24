@@ -30,7 +30,7 @@ int wildcmp(char *s1, char *s2)
 	else if (s2len == 1 && s2[0] == '*')
 		return (1);
 	else if (allstar(s2, s2len))
-		return 1;
+	  return (1);
 	else if (s1[s1len] != s2[s2len] && s2[s2len] != '*')
 		return (0);
 
@@ -66,7 +66,7 @@ int _strlen(char *string)
 int allstar(char *string, int strlen)
 {
 	int i;
-	
+
 	for (i = 0; i < strlen; i++)
 	{
 		if (string[i] != '*')
@@ -87,16 +87,16 @@ int allstar(char *string, int strlen)
 int full_check(char *s1, char *s2)
 {
 	/* If we hit the end of both strings, they match */
-	if(*s1 == '\0' && *s2 == '\0')
-    	return (1);
+	if (*s1 == '\0' && *s2 == '\0')
+	return (1);
 	/* If we hit the end of s1 but !s2 we need to check for chars */
 	if (*s1 == '\0' && *s2 == '*')
-	    return (full_check(s1, s2 + 1));
+	return (full_check(s1, s2 + 1));
 	/* If we have same char in s1/s2 they match adv both */
 	if (*s1 == *s2)
-	    return (full_check(s1 + 1, s2 + 1));
+	return (full_check(s1 + 1, s2 + 1));
 	/* If s2 is on a wildcard we check for both the next in s1 and s2 */
 	if (*s2 == '*')
-		return (full_check(s1, s2 + 1) || full_check(s1 + 1, s2));
+	return (full_check(s1, s2 + 1) || full_check(s1 + 1, s2));
 	return (0);
 }
