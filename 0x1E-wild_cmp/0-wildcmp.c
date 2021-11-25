@@ -11,7 +11,7 @@
  */
 int wildcmp(char *s1, char *s2)
 {
-        int s1len, s2len, check;
+    int s1len, s2len, check;
 
 	/* if either string is null or empty it's game over */
 	if (s1 == NULL || s2 == NULL)
