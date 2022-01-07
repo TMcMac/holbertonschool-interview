@@ -1,11 +1,12 @@
 #!/usr/bin/python3
 """ Pascals Triangle """
 
+
 def pascal_triangle(n):
-"""
-This function is designed to return a
-pascals triangle of n height.
-"""
+    """
+        This function is designed to return a
+        pascals triangle of n height.
+    """
     triangle = []
     if n <= 0:
         return triangle
