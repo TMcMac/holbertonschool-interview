@@ -23,7 +23,8 @@ def pascal_triangle(n):
                 elif mover == prevRowLen:
                     newRow.append(1)
                 else:
-                    newRow.append((triangle[(row - 1)][(mover - 1)] + triangle[(row - 1)][mover]))
+                    newRow.append((triangle[(row - 1)][(mover - 1)]
+                                   + triangle[(row - 1)][mover]))
                 mover += 1
             triangle.append(newRow)
             row += 1
