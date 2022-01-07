@@ -11,7 +11,7 @@
  */
 int wildcmp(char *s1, char *s2)
 {
- 	/* If we hit the end of both strings, they match */
+	/* If we hit the end of both strings, they match */
 	if (*s1 == '\0' && *s2 == '\0')
 		return (1);
 	/* If we hit the end of s1 but !s2 we need to check for chars */
