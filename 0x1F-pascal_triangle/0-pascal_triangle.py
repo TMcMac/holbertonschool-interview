@@ -1,4 +1,4 @@
-#! /usr/bin/python3
+#!/usr/bin/python3
 """ Pascals Triangle """
 
 def pascal_triangle(n):
