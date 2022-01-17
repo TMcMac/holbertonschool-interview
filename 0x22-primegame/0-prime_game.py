@@ -47,9 +47,9 @@ def isWinner(x, nums):
                 while (len(curRound) > 1):
                     num = curRound[1]
                     # if (turn % 2) == 0:
-                        # print("Maria picks {}".format(num))
+                    # print("Maria picks {}".format(num))
                     # else:
-                        # print("Ben picks {}".format(num))
+                    # print("Ben picks {}".format(num))
                     curRound.remove(num)
                     for i in curRound:
                         if i % num is 0:
