@@ -47,9 +47,9 @@ def isWinner(x, nums):
                 while (len(curRound) > 1):
                     num = curRound[1]
                     # if (turn % 2) == 0:
-                       # print("Maria picks {}".format(num))
+                        # print("Maria picks {}".format(num))
                     # else:
-                       # print("Ben picks {}".format(num))
+                        # print("Ben picks {}".format(num))
                     curRound.remove(num)
                     for i in curRound:
                         if i % num is 0:
@@ -62,10 +62,10 @@ def isWinner(x, nums):
                     turn += 1
                     # print("Remaining in curRound: {}".format(curRound))
                 if (turn % 2) is 0:
-                    # print("Current round ended on Maria's turn, point to Ben")
+                    # print("Cur round ended on Maria's turn, point to Ben")
                     b += 1
                 else:
-                    # print("Current round ended on Ben's turn, point to Maria")
+                    # print("Cur round ended on Ben's turn, point to Maria")
                     m += 1
         if m > b:
             # print("End of Round: M = {} B = {}\n Maria Wins".format(m, b))
