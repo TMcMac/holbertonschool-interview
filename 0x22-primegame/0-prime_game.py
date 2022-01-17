@@ -1,6 +1,28 @@
 #!/usr/bin/python3
+""" This is a game of prime number selections """
+
 
 def isWinner(x, nums):
+    """
+         function - isWinner is meant to see who would
+         win across x rounds of choosing primes from
+         lists made up of 1 to n, n being the most recent
+         number selected from the list of ints nums
+
+         x - the number of rounds to be played
+         nums - a list of integers 1 - 10,000
+
+        game play - for each round the next number(i) from list
+        nums is selected and a new list from 1 to i (inclusive) is
+        created. Maria and Ben then take turns picking primes and
+        eliminating the prime and all it's multiples from new list
+        until only the number 1 remains in new list. Who ever has
+        the most primes at the end of the round takes the round
+        and the most round wins = game win.
+
+        return - the overall winner based on # of round wins
+    """
+
     i = maria = ben = 0
 
     if (x < 1):
